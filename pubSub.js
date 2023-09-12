@@ -10,8 +10,11 @@ const pubSub = {
 };
 
 pubSub.subscribe('update', callbackFunction);
+pubSub.subscribe('rastafarai', callbackFunction);
 pubSub.publish('update', 'Some update'); // Some update
 
 function callbackFunction(data) {
     console.log(data);
 }
+
+console.log("EVENTS HERE", pubSub.events); // { update: [ [Function: callbackFunction] ] }
